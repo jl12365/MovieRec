@@ -1,6 +1,11 @@
-import Card from "../components/Card"
+import MovieCard from "../components/MovieCard"
+import '../css/Home.css'
+import { useState } from "react"
 
 function Home(){
+
+    //name of the state, function to update the state
+    const[searchQuery, setSearchQuery] = useState("");
 
     const movies = [
         {id: 1, title: "John Wick", release_date: "2000"},
@@ -10,7 +15,7 @@ function Home(){
     ]
 
     const handleSearch = () => {
-
+        alert(searchQuery)
     }
 
     return <div className="home">
@@ -19,6 +24,8 @@ function Home(){
             type="text" 
             placeholder="Search for movies..." 
             className="search-input"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
             />
 
             <button 
@@ -31,7 +38,8 @@ function Home(){
 
         <div className="movies-rail">
             {movies.map((movie) => (
-                <Card movie={movie} key={movie.id} />
+                //searching logic to show movies based on the searchquery criteria
+                movie.title.toLowerCase().startsWith(searchQuery) && <MovieCard movie={movie} key={movie.id} />
             ))}
         </div>
 
