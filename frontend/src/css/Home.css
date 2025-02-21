@@ -5,7 +5,7 @@
 }
 
 .search-form {
-  max-width: 600px;
+  max-width: 1000px;
   margin: 0 auto 2rem;
   display: flex;
   gap: 1rem;
@@ -30,8 +30,8 @@
 
 .search-button {
   padding: 0.75rem 1.5rem;
-  background-color: #e50914;
-  color: white;
+  background-color: #ff0000;
+  color: rgb(255, 255, 255);
   border-radius: 4px;
   font-weight: 500;
   transition: background-color 0.2s;
@@ -53,7 +53,7 @@
   }
 }
 
-.movies-grid {
+.movies-rail {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
